@@ -147,7 +147,7 @@ class GridFieldExportButton implements GridField_HTMLProvider, GridField_ActionP
 					} else {
 						$value = $gridField->getDataFieldValue($item, $columnSource);
 
-						if(!$value) {
+						if(!$value && $item->hasMethod($columnHeader)) {
 							$value = $gridField->getDataFieldValue($item, $columnHeader);
 						}
 					}
